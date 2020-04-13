@@ -1,20 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomSkinListComponent } from './custom-skin-list/custom-skin-list.component';
+
+// custom imports
+import { SkinService } from "./services/skin.service";
+import { SkinListComponent } from './skin-list/skin-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomSkinListComponent
+    SkinListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    SkinService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

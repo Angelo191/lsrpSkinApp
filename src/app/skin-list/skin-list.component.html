@@ -49,9 +49,10 @@
     </div>
     <div class="row mt-5">
         <div class="col">
-            <figure class="figure"><img class="img-fluid figure-img" src="https://m2.ls-rp.com/skin/hmypdgss1-140-200.png">
-                <figcaption class="figure-caption text-center">ID: 25287<br></figcaption>
-                <figcaption class="figure-caption text-center">Name: hmypdgss1<br></figcaption>
+            <figure class="figure" *ngFor="let skin of skinList$">
+                <img class="img-fluid figure-img" src="https://m2.ls-rp.com/skin/{{skin.name}}-140-200.png">
+                <figcaption class="figure-caption text-center">ID: {{skin.id}}<br></figcaption>
+                <figcaption class="figure-caption text-center">Name: {{skin.name}}<br></figcaption>
             </figure>
         </div>
     </div>

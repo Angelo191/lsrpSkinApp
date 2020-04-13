@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomSkinListComponent } from './custom-skin-list.component';
+import { SkinListComponent } from './skin-list.component';
 
-describe('CustomSkinListComponent', () => {
-  let component: CustomSkinListComponent;
-  let fixture: ComponentFixture<CustomSkinListComponent>;
+describe('SkinListComponent', () => {
+  let component: SkinListComponent;
+  let fixture: ComponentFixture<SkinListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CustomSkinListComponent ]
+      declarations: [ SkinListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomSkinListComponent);
+    fixture = TestBed.createComponent(SkinListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
