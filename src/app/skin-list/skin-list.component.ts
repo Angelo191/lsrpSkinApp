@@ -24,11 +24,10 @@ export class SkinListComponent implements OnInit {
         this.skinList$ = data;
         this.skinList$ = this.skinList$.filter(this.customSkinsOnly);
         this.fullSkinList$ = this.skinList$;
-        console.warn(": " + this.skinList$.length);
-        console.warn("Number of skins returned by the API: ");
-        console.warn("\t - Custom Skins: " + this.skinList$.length);
-        console.warn("\t - Default game Skins: " + this.skinList$.length);
-        console.warn("\t - Total: " + this.skinList$.length);
+        console.log("♦ Number of skins returned by the API: ");
+        console.log("  • Custom Skins: " + this.skinList$.length);
+        console.log("  • Default game Skins: " + (data.length - this.skinList$.length));
+        console.log("  • Total: " + data.length);
       }
     );
   }
