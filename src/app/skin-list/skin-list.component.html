@@ -1,10 +1,10 @@
 <div class="container">
-    <div class="row" style="margin-bottom: 15px;">
+    <div class="row">
         <div class="col">
-            <div class="row justify-content-center">
-                <div class="d-inline-block ml-5 mb-2">
-                    <label for="select-ethnicity">Ethnicity</label>
-                    <select id="select-ethnicity" class="selectpicker d-inline-block ml-2" multiple data-live-search="true" data-live-search-placeholder="Search">
+            <div class="row justify-content-center pr-5">
+                <div class="d-inline-block mb-2 pr-5">
+                    <label class="font-weight-bold" for="select-race">Ethnicity</label>
+                    <select id="select-race" class="selectpicker d-inline-block ml-2 rounded-lg border border-success" multiple data-live-search="true" data-live-search-placeholder="Search">
                         <option value="1">Caucasian</option>
                         <option value="2">African American</option>
                         <option value="3">Hispanic</option>
@@ -12,25 +12,25 @@
                     </select>
                 </div>
                 <div class="d-inline-block ml-5 mb-2">
-                    <label for="select-gender">Gender</label>
-                    <select id="select-gender" class="selectpicker d-inline-block ml-2" multiple data-live-search="true" data-live-search-placeholder="Search">
+                    <label class="font-weight-bold" for="select-gender">Gender</label>
+                    <select id="select-gender" class="selectpicker d-inline-block ml-2 rounded-lg border border-success" multiple data-live-search="true" data-live-search-placeholder="Search">
                         <option value="1">Male</option>
                         <option value="2">Female</option>
                     </select>
                 </div>
             </div>
-            <div class="row pl-5 justify-content-center">
-                <div class="d-inline-block ml-5 mb-2">
-                    <label for="select-weight">Weight</label>
-                    <select id="select-weight" class="selectpicker d-inline-block ml-2 mr-0" multiple data-live-search="true" data-live-search-placeholder="Search">
+            <div class="row pl-5 justify-content-center pl-5">
+                <div class="d-inline-block  pl-5 mb-2">
+                    <label class="font-weight-bold" for="select-weight">Weight</label>
+                    <select id="select-weight" class="selectpicker d-inline-block ml-2 rounded-lg border border-success" multiple data-live-search="true" data-live-search-placeholder="Search">
                         <option value="1">Athletic</option>
                         <option value="2">Overweight</option>
                         <option value="3">Musclar</option>
                     </select>
                 </div>
                 <div class="d-inline-block ml-5 mb-2">
-                    <label for="select-category">Category</label>
-                    <select id="select-category" class="selectpicker d-inline-block ml-2" multiple data-live-search="true" data-live-search-placeholder="Search">
+                    <label class="font-weight-bold" for="select-category">Category</label>
+                    <select id="select-category" class="selectpicker d-inline-block ml-2 rounded-lg border border-success" multiple data-live-search="true" data-live-search-placeholder="Search">
                         <option value="1">Civilian</option>
                         <option value="2">Gang member</option>
                         <option value="3">Country & Old people</option>
@@ -42,15 +42,18 @@
                     </select>
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <button class="btn btn-primary mt-3"> Search </button>
+            <div class="row justify-content-center mt-3">
+                <button class="btn btn-primary" (click)= "applyFilters()"> Apply filters </button>
+                <button class="btn btn-danger ml-4" (click)="clearFilters()"> Reset filters </button>
             </div>
         </div>
     </div>
     <div class="row mt-5">
         <div class="col">
-            <figure class="figure" *ngFor="let skin of skinList$">
-                <img class="img-fluid figure-img" src="https://m2.ls-rp.com/skin/{{skin.name}}-140-200.png">
+            <figure class="figure bg-light p-2 mr-2 rounded-lg border border-primary" *ngFor="let skin of skinList$">
+                <a rel="image failed to load" target="_blank" href="https://m2.ls-rp.com/skin/{{skin.name}}-140-200.png">
+                    <img class="img-fluid figure-img" src="https://m2.ls-rp.com/skin/{{skin.name}}-140-200.png">
+                </a>
                 <figcaption class="figure-caption text-center">ID: {{skin.id}}<br></figcaption>
                 <figcaption class="figure-caption text-center">Name: {{skin.name}}<br></figcaption>
             </figure>
